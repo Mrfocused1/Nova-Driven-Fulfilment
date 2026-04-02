@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noval Driven Fulfilment | Logistics Solutions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --ndf-blue: #003087;
+            --ndf-dark-blue: #002060;
+            --ndf-light-blue: #0072CE;
+            --ndf-pale-blue: #E8EDEE;
+            --ndf-white: #FFFFFF;
+            --ndf-grey: #4C6272;
+            --ndf-light-grey: #F0F4F5;
+            --ndf-dark: #1D1D1B;
+            --ndf-green: #007F3B;
+            --ndf-border: #D8DDE0;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            color: var(--ndf-dark);
+            line-height: 1.6;
+            background: var(--ndf-white);
+        }
+
+        /* ── Top banner ── */
+        .top-banner {
+            background: var(--ndf-dark-blue);
+            color: var(--ndf-white);
+            font-size: 0.8rem;
+            padding: 6px 0;
+            letter-spacing: 0.02em;
+        }
+        .top-banner .container {
+            display: flex;
+            justify-content: flex-end;
+            gap: 24px;
+        }
+        .top-banner a {
+            color: var(--ndf-white);
+            text-decoration: none;
+            opacity: 0.85;
+            transition: opacity 0.2s;
+        }
+        .top-banner a:hover { opacity: 1; }
+
+        /* ── Container ── */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ── Header ── */
+        header {
+            background: var(--ndf-blue);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: var(--ndf-white);
+        }
+        .logo img {
+            height: 48px;
+            width: auto;
+        }
+
+        nav { display: flex; align-items: center; gap: 4px; }
+        nav a {
+            color: var(--ndf-white);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        nav a:hover { background: rgba(255, 255, 255, 0.12); }
+        .nav-cta {
+            background: var(--ndf-white) !important;
+            color: var(--ndf-blue) !important;
+            font-weight: 600 !important;
+            margin-left: 8px;
+        }
+        .nav-cta:hover { background: var(--ndf-pale-blue) !important; }
+
+        /* ── Hero with video background ── */
+        .hero {
+            position: relative;
+            color: var(--ndf-white);
+            padding: 120px 0 100px;
+            overflow: hidden;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+        }
+        .hero-video {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(135deg, rgba(0, 32, 96, 0.88) 0%, rgba(0, 48, 135, 0.82) 50%, rgba(0, 32, 96, 0.9) 100%);
+            z-index: 1;
+        }
+        .hero .container { position: relative; z-index: 2; }
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+        .hero p {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            line-height: 1.7;
+            margin-bottom: 32px;
+            max-width: 520px;
+        }
+        .hero-buttons { display: flex; gap: 14px; flex-wrap: wrap; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+        .btn-primary { background: var(--ndf-white); color: var(--ndf-blue); }
+        .btn-primary:hover { background: var(--ndf-pale-blue); transform: translateY(-1px); }
+        .btn-outline { background: transparent; color: var(--ndf-white); border-color: rgba(255,255,255,0.4); }
+        .btn-outline:hover { border-color: var(--ndf-white); background: rgba(255,255,255,0.08); }
+        .btn-blue { background: var(--ndf-blue); color: var(--ndf-white); }
+        .btn-blue:hover { background: var(--ndf-dark-blue); transform: translateY(-1px); }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        .stat-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 12px;
+            padding: 28px 24px;
+            text-align: center;
+        }
+        .stat-card .number { font-size: 2.2rem; font-weight: 700; display: block; margin-bottom: 4px; }
+        .stat-card .label {
+            font-size: 0.85rem;
+            opacity: 0.75;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            font-weight: 500;
+        }
+
+        /* ── Trust bar ── */
+        .trust-bar {
+            background: var(--ndf-light-grey);
+            border-bottom: 1px solid var(--ndf-border);
+            padding: 20px 0;
+        }
+        .trust-bar .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 48px;
+            flex-wrap: wrap;
+        }
+        .trust-logo {
+            height: 28px;
+            width: auto;
+            opacity: 0.7;
+        }
+        .trust-bar span {
+            font-size: 0.85rem;
+            color: var(--ndf-grey);
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        /* ── Section styling ── */
+        section { padding: 80px 0; }
+        .section-header { text-align: center; margin-bottom: 56px; }
+        .section-label {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--ndf-light-blue);
+            margin-bottom: 12px;
+        }
+        .section-header h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--ndf-dark-blue);
+            letter-spacing: -0.02em;
+            margin-bottom: 14px;
+        }
+        .section-header p {
+            font-size: 1.05rem;
+            color: var(--ndf-grey);
+            max-width: 640px;
+            margin: 0 auto;
+        }
+
+        /* ── Services ── */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+        .service-card {
+            background: var(--ndf-white);
+            border: 1px solid var(--ndf-border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.25s;
+            position: relative;
+        }
+        .service-card:hover {
+            border-color: var(--ndf-light-blue);
+            box-shadow: 0 8px 30px rgba(0, 48, 135, 0.08);
+            transform: translateY(-3px);
+        }
+        .service-card-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+        .service-card-body { padding: 28px 24px; }
+        .service-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--ndf-pale-blue);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+        .service-icon svg { width: 24px; height: 24px; color: var(--ndf-blue); }
+        .service-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--ndf-dark-blue);
+            margin-bottom: 8px;
+        }
+        .service-card p {
+            font-size: 0.9rem;
+            color: var(--ndf-grey);
+            line-height: 1.65;
+        }
+
+        /* ── About / split section ── */
+        .about-section {
+            background: var(--ndf-white);
+            border-top: 1px solid var(--ndf-border);
+        }
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 56px;
+            align-items: center;
+        }
+        .about-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+        }
+        .about-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+        .about-logo { height: 56px; width: auto; margin-bottom: 24px; }
+        .about-content .section-label { text-align: left; }
+        .about-content h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--ndf-dark-blue);
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+        .about-content p {
+            color: var(--ndf-grey);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 14px;
+        }
+        .about-content .btn { margin-top: 10px; }
+
+        /* ── Video showcase ── */
+        .video-showcase {
+            background: var(--ndf-dark-blue);
+            padding: 80px 0;
+            color: var(--ndf-white);
+        }
+        .video-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            margin-top: 48px;
+        }
+        .video-card {
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+        .video-card video {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+        .video-card-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px 24px;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .video-showcase .section-header h2 { color: var(--ndf-white); }
+        .video-showcase .section-header p { color: rgba(255,255,255,0.7); }
+        .video-showcase .section-label { color: rgba(255,255,255,0.5); }
+
+        /* ── Why us / features ── */
+        .why-section {
+            background: var(--ndf-light-grey);
+            border-top: 1px solid var(--ndf-border);
+            border-bottom: 1px solid var(--ndf-border);
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+        .feature-item {
+            display: flex;
+            gap: 18px;
+            padding: 28px 24px;
+            background: var(--ndf-white);
+            border-radius: 10px;
+            border: 1px solid var(--ndf-border);
+        }
+        .feature-check {
+            width: 36px;
+            height: 36px;
+            background: #E6F3EC;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        .feature-check svg { width: 18px; height: 18px; color: var(--ndf-green); }
+        .feature-item h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--ndf-dark-blue);
+            margin-bottom: 6px;
+        }
+        .feature-item p {
+            font-size: 0.9rem;
+            color: var(--ndf-grey);
+            line-height: 1.6;
+        }
+
+        /* ── Gallery ── */
+        .gallery-section {
+            background: var(--ndf-white);
+            border-bottom: 1px solid var(--ndf-border);
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: 240px 240px;
+            gap: 16px;
+        }
+        .gallery-grid .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+        .gallery-grid .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s;
+        }
+        .gallery-grid .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        .gallery-item-wide {
+            grid-column: span 2;
+        }
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            padding: 16px 20px;
+            background: linear-gradient(transparent, rgba(0, 32, 96, 0.65));
+            color: var(--ndf-white);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* ── Process ── */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            position: relative;
+        }
+        .process-grid::before {
+            content: '';
+            position: absolute;
+            top: 36px;
+            left: 12%;
+            right: 12%;
+            height: 2px;
+            background: var(--ndf-border);
+            z-index: 0;
+        }
+        .process-step { text-align: center; position: relative; z-index: 1; }
+        .step-number {
+            width: 72px;
+            height: 72px;
+            background: var(--ndf-blue);
+            color: var(--ndf-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 18px;
+            border: 4px solid var(--ndf-white);
+            box-shadow: 0 2px 12px rgba(0, 48, 135, 0.15);
+        }
+        .process-step h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--ndf-dark-blue);
+            margin-bottom: 8px;
+        }
+        .process-step p {
+            font-size: 0.88rem;
+            color: var(--ndf-grey);
+            line-height: 1.55;
+        }
+
+        /* ── CTA with background image ── */
+        .cta-section {
+            position: relative;
+            color: var(--ndf-white);
+            text-align: center;
+            padding: 100px 0;
+            overflow: hidden;
+        }
+        .cta-bg {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        .cta-overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(135deg, rgba(0, 32, 96, 0.92), rgba(0, 48, 135, 0.88));
+            z-index: 1;
+        }
+        .cta-section .container { position: relative; z-index: 2; }
+        .cta-section h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 14px;
+            letter-spacing: -0.01em;
+        }
+        .cta-section p {
+            font-size: 1.05rem;
+            opacity: 0.88;
+            margin-bottom: 32px;
+            max-width: 520px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .cta-buttons { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+
+        /* ── Footer ── */
+        footer {
+            background: var(--ndf-dark);
+            color: rgba(255,255,255,0.7);
+            padding: 64px 0 0;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 48px;
+            padding-bottom: 48px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+        .footer-brand p {
+            font-size: 0.9rem;
+            line-height: 1.65;
+            margin-top: 16px;
+            max-width: 300px;
+        }
+        .footer-logo { margin-bottom: 4px; }
+        .footer-logo img { height: 52px; width: auto; }
+        footer h4 {
+            color: var(--ndf-white);
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 18px;
+        }
+        footer ul { list-style: none; }
+        footer ul li { margin-bottom: 10px; }
+        footer ul a {
+            color: rgba(255,255,255,0.65);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        footer ul a:hover { color: var(--ndf-white); }
+        .footer-bottom {
+            padding: 24px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.82rem;
+        }
+        .footer-bottom a { color: rgba(255,255,255,0.5); text-decoration: none; }
+        .footer-bottom a:hover { color: var(--ndf-white); }
+        .footer-legal { display: flex; gap: 24px; }
+
+        /* ── Mobile ── */
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+        .mobile-toggle span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--ndf-white);
+            margin: 5px 0;
+            border-radius: 2px;
+        }
+
+        @media (max-width: 960px) {
+            .hero-grid, .about-grid { grid-template-columns: 1fr; gap: 40px; }
+            .hero { min-height: auto; padding: 80px 0 64px; }
+            .hero h1 { font-size: 2.2rem; }
+            .services-grid { grid-template-columns: 1fr 1fr; }
+            .video-grid { grid-template-columns: 1fr; }
+            .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+            .gallery-item-wide { grid-column: span 1; }
+            .process-grid { grid-template-columns: 1fr 1fr; gap: 24px; }
+            .process-grid::before { display: none; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        @media (max-width: 680px) {
+            nav {
+                display: none;
+                position: absolute;
+                top: 72px;
+                left: 0;
+                right: 0;
+                background: var(--ndf-blue);
+                flex-direction: column;
+                padding: 16px 24px 24px;
+                gap: 4px;
+                box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+            }
+            nav.open { display: flex; }
+            nav a { padding: 12px 16px; }
+            .nav-cta { text-align: center; margin-left: 0 !important; margin-top: 8px; }
+            .mobile-toggle { display: block; }
+            .services-grid, .features-grid, .gallery-grid { grid-template-columns: 1fr; }
+            .hero { padding: 64px 0 56px; }
+            .hero h1 { font-size: 1.85rem; }
+            .hero-stats { grid-template-columns: 1fr 1fr; }
+            section { padding: 56px 0; }
+            .section-header h2 { font-size: 1.7rem; }
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+            .about-image img { height: 280px; }
+            .video-card video { height: 220px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <div class="container">
+            <a href="tel:+44800000000">0800 000 000</a>
+            <a href="mailto:enquiries@novaldriven.co.uk">enquiries@novaldriven.co.uk</a>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                <img src="logo-light.svg" alt="Noval Driven Fulfilment">
+            </a>
+            <nav>
+                <a href="#services">Services</a>
+                <a href="#about">About</a>
+                <a href="#why-us">Why Us</a>
+                <a href="#process">Process</a>
+                <a href="#contact" class="nav-cta">Get a Quote</a>
+            </nav>
+            <button class="mobile-toggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero with Video Background -->
+    <section class="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="https://videos.pexels.com/video-files/4292300/4292300-hd_1920_1080_25fps.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-grid">
+                <div>
+                    <h1>Reliable Logistics &amp; Fulfilment You Can Trust</h1>
+                    <p>End-to-end supply chain solutions built for scale. From warehousing and inventory management to last-mile delivery, we keep your operations running with precision and transparency.</p>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">Request a Quote</a>
+                        <a href="#services" class="btn btn-outline">Our Services</a>
+                    </div>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-card">
+                        <span class="number">99.8%</span>
+                        <span class="label">Order Accuracy</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="number">24hr</span>
+                        <span class="label">Dispatch Target</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="number">150k+</span>
+                        <span class="label">Orders / Month</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="number">12+</span>
+                        <span class="label">Years Experience</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust bar -->
+    <div class="trust-bar">
+        <div class="container">
+            <img src="logo-dark.svg" alt="NDF" class="trust-logo">
+            <span>ISO 9001 Certified</span>
+            <span>UK Nationwide Coverage</span>
+            <span>GDPR Compliant</span>
+            <span>Carbon Neutral Committed</span>
+            <span>Real-Time Tracking</span>
+        </div>
+    </div>
+
+    <!-- Services with images -->
+    <section id="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">What We Do</div>
+                <h2>Comprehensive Fulfilment Services</h2>
+                <p>Scalable logistics solutions designed to support businesses of all sizes, from startups to enterprise.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img class="service-card-img" src="https://images.pexels.com/photos/4487363/pexels-photo-4487363.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Warehouse storage facility">
+                    <div class="service-card-body">
+                        <div class="service-icon">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+                        </div>
+                        <h3>Warehousing &amp; Storage</h3>
+                        <p>Secure, climate-controlled facilities across the UK with flexible capacity to match your seasonal demands.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img class="service-card-img" src="https://images.pexels.com/photos/4487382/pexels-photo-4487382.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Inventory management systems">
+                    <div class="service-card-body">
+                        <div class="service-icon">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg>
+                        </div>
+                        <h3>Inventory Management</h3>
+                        <p>Real-time stock visibility with automated reorder alerts, batch tracking, and full system integration.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img class="service-card-img" src="https://images.pexels.com/photos/6407553/pexels-photo-6407553.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Delivery truck on the road">
+                    <div class="service-card-body">
+                        <div class="service-icon">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"/></svg>
+                        </div>
+                        <h3>Distribution &amp; Delivery</h3>
+                        <p>Multi-carrier delivery network with next-day and same-day options. Full tracking and branded experiences.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img class="service-card-img" src="https://images.pexels.com/photos/10834810/pexels-photo-10834810.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Returns processing centre">
+                    <div class="service-card-body">
+                        <div class="service-icon">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                        </div>
+                        <h3>Returns Management</h3>
+                        <p>Streamlined returns processing with quality inspection, restocking, and detailed reporting.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img class="service-card-img" src="https://images.pexels.com/photos/29786116/pexels-photo-29786116.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Technology integration systems">
+                    <div class="service-card-body">
+                        <div class="service-icon">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
+                        </div>
+                        <h3>Technology Integration</h3>
+                        <p>Seamless API connections with Shopify, WooCommerce, Amazon, and custom platforms.</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <img class="service-card-img" src="https://images.pexels.com/photos/4487365/pexels-photo-4487365.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Kitting and co-packing services">
+                    <div class="service-card-body">
+                        <div class="service-icon">
+                            <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/></svg>
+                        </div>
+                        <h3>Kitting &amp; Co-Packing</h3>
+                        <p>Custom packaging, subscription box assembly, promotional bundling, and gift wrapping services.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About section with image -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://images.pexels.com/photos/7495288/pexels-photo-7495288.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Professional team meeting">
+                </div>
+                <div class="about-content">
+                    <img src="logo-dark.svg" alt="Noval Driven Fulfilment" class="about-logo">
+                    <div class="section-label">About Us</div>
+                    <h2>A Trusted Partner for Growing Businesses</h2>
+                    <p>With over 12 years of experience in logistics and fulfilment, Noval Driven Fulfilment has built a reputation for reliability, transparency, and operational excellence across the United Kingdom.</p>
+                    <p>Our team of dedicated professionals works closely with each client to design bespoke supply chain solutions that scale with your business. From small e-commerce brands to enterprise-level operations, we deliver consistent results.</p>
+                    <p>We invest in our people, our technology, and our infrastructure to ensure your customers receive the service they expect, every single time.</p>
+                    <a href="#contact" class="btn btn-blue">Work With Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Showcase -->
+    <section class="video-showcase">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">See Us In Action</div>
+                <h2>Our Operations</h2>
+                <p>From our warehouse floor to your customer's door, every step is optimised for speed and accuracy.</p>
+            </div>
+            <div class="video-grid">
+                <div class="video-card">
+                    <video autoplay muted loop playsinline>
+                        <source src="https://videos.pexels.com/video-files/6667254/6667254-hd_1920_1080_25fps.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-card-label">Fulfilment & Dispatch Operations</div>
+                </div>
+                <div class="video-card">
+                    <video autoplay muted loop playsinline>
+                        <source src="https://videos.pexels.com/video-files/6868107/6868107-hd_1920_1080_30fps.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-card-label">Last-Mile Delivery Network</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us -->
+    <section class="why-section" id="why-us">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Why Choose Us</div>
+                <h2>Built for Reliability at Scale</h2>
+                <p>We combine operational excellence with transparent communication to deliver a fulfilment experience your business can depend on.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-check">
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                    </div>
+                    <div>
+                        <h4>Dedicated Account Management</h4>
+                        <p>A named account manager who understands your business and provides proactive support, not a call centre queue.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-check">
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                    </div>
+                    <div>
+                        <h4>Transparent Pricing</h4>
+                        <p>No hidden fees. Clear per-unit pricing that scales with your volume. Monthly reporting on all costs and activity.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-check">
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                    </div>
+                    <div>
+                        <h4>SLA-Backed Performance</h4>
+                        <p>Service level agreements with measurable KPIs. We hold ourselves accountable to the standards we promise.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-check">
+                        <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                    </div>
+                    <div>
+                        <h4>Scalable Infrastructure</h4>
+                        <p>Whether you ship 100 or 100,000 orders a month, our systems and facilities flex to meet your demand without disruption.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Our Facilities</div>
+                <h2>Inside Noval Driven Fulfilment</h2>
+                <p>State-of-the-art warehousing and distribution facilities across the United Kingdom.</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item gallery-item-wide">
+                    <img src="https://images.pexels.com/photos/10324993/pexels-photo-10324993.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Distribution centre">
+                    <div class="gallery-overlay">Distribution Centre</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/30824313/pexels-photo-30824313.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Warehouse operations">
+                    <div class="gallery-overlay">Warehouse Operations</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/9754798/pexels-photo-9754798.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Shipping and logistics">
+                    <div class="gallery-overlay">Shipping Hub</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/7888986/pexels-photo-7888986.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Team collaboration">
+                    <div class="gallery-overlay">Our Team</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://images.pexels.com/photos/15379824/pexels-photo-15379824.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Fleet vehicles">
+                    <div class="gallery-overlay">Delivery Fleet</div>
+                </div>
+                <div class="gallery-item gallery-item-wide">
+                    <img src="https://images.pexels.com/photos/5990047/pexels-photo-5990047.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Modern office">
+                    <div class="gallery-overlay">Operations Centre</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section id="process">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">How It Works</div>
+                <h2>Getting Started Is Simple</h2>
+                <p>From initial consultation to live operations, we make onboarding smooth and efficient.</p>
+            </div>
+            <div class="process-grid">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h4>Consultation</h4>
+                    <p>We assess your requirements, volumes, and integration needs to design a tailored solution.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h4>Onboarding</h4>
+                    <p>Systems integration, stock intake, and process configuration with full testing before go-live.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h4>Go Live</h4>
+                    <p>Orders flow seamlessly from your channels through our fulfilment centre to your customers.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h4>Optimise</h4>
+                    <p>Ongoing performance reviews, data-driven improvements, and scaling support as you grow.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA with background image -->
+    <section class="cta-section" id="contact">
+        <img class="cta-bg" src="https://images.pexels.com/photos/10324993/pexels-photo-10324993.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="">
+        <div class="cta-overlay"></div>
+        <div class="container">
+            <h2>Ready to Streamline Your Fulfilment?</h2>
+            <p>Get in touch for a no-obligation consultation and discover how we can support your growth.</p>
+            <div class="cta-buttons">
+                <a href="mailto:enquiries@novaldriven.co.uk" class="btn btn-primary">Contact Us Today</a>
+                <a href="tel:+44800000000" class="btn btn-outline">Call 0800 000 000</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo"><img src="logo-light.svg" alt="Noval Driven Fulfilment"></div>
+                    <p>Trusted logistics and fulfilment partner for growing businesses across the United Kingdom. ISO 9001 certified, GDPR compliant.</p>
+                </div>
+                <div>
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Warehousing</a></li>
+                        <li><a href="#services">Inventory Management</a></li>
+                        <li><a href="#services">Distribution</a></li>
+                        <li><a href="#services">Returns</a></li>
+                        <li><a href="#services">Kitting</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:enquiries@novaldriven.co.uk">enquiries@novaldriven.co.uk</a></li>
+                        <li><a href="tel:+44800000000">0800 000 000</a></li>
+                        <li><a href="#">United Kingdom</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Noval Driven Fulfilment Ltd. All rights reserved.</span>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const toggle = document.querySelector('.mobile-toggle');
+        const nav = document.querySelector('nav');
+        toggle.addEventListener('click', () => {
+            nav.classList.toggle('open');
+            toggle.setAttribute('aria-expanded', nav.classList.contains('open'));
+        });
+        nav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => nav.classList.remove('open'));
+        });
+    </script>
+</body>
+</html>
