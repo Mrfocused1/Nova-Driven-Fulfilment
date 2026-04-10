@@ -301,42 +301,78 @@
 
         /* ── About / split section ── */
         .about-section {
-            background: #000000;
+            background: #0a0a0a;
             border-top: 1px solid var(--ndf-border);
+            position: relative;
+            overflow: hidden;
+        }
+        .about-section::before {
+            content: '';
+            position: absolute;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(0, 114, 206, 0.08) 0%, transparent 70%);
+            pointer-events: none;
         }
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 56px;
-            align-items: center;
+            gap: 48px;
+            align-items: start;
         }
-        .about-image {
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+        .about-content {
+            position: relative;
         }
-        .about-image img {
-            width: 100%;
-            height: 400px;
-            object-fit: cover;
-            display: block;
-        }
-        .about-logo { height: 56px; width: auto; margin-bottom: 24px; }
         .about-content .section-label { text-align: left; }
         .about-content h2 {
             font-size: 2rem;
             font-weight: 700;
             color: var(--ndf-white);
-            margin-bottom: 16px;
+            margin-bottom: 20px;
             letter-spacing: -0.02em;
         }
         .about-content p {
-            color: #c0c0c0;
+            color: #b0b0b0;
             font-size: 0.95rem;
-            line-height: 1.7;
-            margin-bottom: 14px;
+            line-height: 1.8;
+            margin-bottom: 16px;
         }
-        .about-content .btn { margin-top: 10px; }
+        .about-content .btn { margin-top: 14px; }
+        .about-highlights {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 32px;
+        }
+        .about-highlight-card {
+            background: #111111;
+            border: 1px solid var(--ndf-border);
+            border-radius: 12px;
+            padding: 24px 20px;
+            text-align: center;
+            transition: border-color 0.3s;
+        }
+        .about-highlight-card:hover {
+            border-color: var(--ndf-blue);
+        }
+        .about-highlight-card .highlight-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--ndf-blue);
+            display: block;
+            margin-bottom: 6px;
+        }
+        .about-highlight-card .highlight-label {
+            font-size: 0.8rem;
+            color: #808080;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-weight: 500;
+        }
+        .about-logo { height: 56px; width: auto; margin-bottom: 24px; }
 
         /* ── Video showcase ── */
         .video-showcase {
@@ -808,22 +844,39 @@
         </div>
     </section>
 
-    <!-- About section with image -->
+    <!-- About section -->
     <section class="about-section" id="about">
         <div class="container">
             <div class="about-grid">
-                <div class="about-image">
-                </div>
                 <div class="about-content">
-                    <img src="logo-dark.svg" alt="Noval Driven Fulfilment" class="about-logo">
                     <div class="section-label">About Us</div>
                     <h2>A Trusted Partner for Growing Businesses</h2>
                     <p>Nova Driven Fulfilment was founded by two brothers, Ade and Donovan, with a shared vision: to help e-commerce brands scale with confidence.</p>
                     <p>Having built and grown their own successful e-commerce venture in the fitness space, they experienced first-hand the challenges that come with rapid growth — from operational bottlenecks to the pressures of fulfilling increasing order volumes. What started as their own struggle quickly became their purpose. They realised that many brands around the world face the same growing pains, and that they had the experience and insight to make a difference.</p>
                     <p>Fast forward to today, Nova Driven Fulfilment exists to be more than just a logistics provider — we aim to be a trusted 3PL partner to ambitious e-commerce brands.</p>
-                    <p>Despite our name, we're not a large, faceless operation. We are a close-knit team of logistics professionals with over 45 years of combined experience, united by a shared passion for delivering excellence. We understand the highs and lows of outsourcing fulfilment because we've lived it ourselves.</p>
-                    <p>That's why everything we do is built around reliability, transparency, and genuine partnership. We don't just store and ship products — we help power your growth, every step of the way.</p>
                     <a href="#contact" class="btn btn-blue">Work With Us</a>
+                </div>
+                <div>
+                    <p style="color: #b0b0b0; font-size: 0.95rem; line-height: 1.8; margin-bottom: 16px;">Despite our name, we're not a large, faceless operation. We are a close-knit team of logistics professionals with over 45 years of combined experience, united by a shared passion for delivering excellence. We understand the highs and lows of outsourcing fulfilment because we've lived it ourselves.</p>
+                    <p style="color: #b0b0b0; font-size: 0.95rem; line-height: 1.8; margin-bottom: 0;">That's why everything we do is built around reliability, transparency, and genuine partnership. We don't just store and ship products — we help power your growth, every step of the way.</p>
+                    <div class="about-highlights">
+                        <div class="about-highlight-card">
+                            <span class="highlight-number">45+</span>
+                            <span class="highlight-label">Years Combined Experience</span>
+                        </div>
+                        <div class="about-highlight-card">
+                            <span class="highlight-number">2</span>
+                            <span class="highlight-label">Founders, One Vision</span>
+                        </div>
+                        <div class="about-highlight-card">
+                            <span class="highlight-number">UK</span>
+                            <span class="highlight-label">Nationwide Coverage</span>
+                        </div>
+                        <div class="about-highlight-card">
+                            <span class="highlight-number">100%</span>
+                            <span class="highlight-label">Owner-Operated</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
